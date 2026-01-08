@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connecting Intelligence</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background: #1a1614;
+      color: #e8c8a0;
+      font-family: 'Courier New', monospace;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      line-height: 1.9;
+    }
+    
+    .container {
+      max-width: 560px;
+      width: 100%;
+      text-align: center;
+    }
+    
+    .logo-icon {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 1.5rem;
+      opacity: 0.9;
+      filter: brightness(0) saturate(100%) invert(76%) sepia(18%) saturate(590%) hue-rotate(357deg) brightness(93%) contrast(89%);
+    }
+    
+    .logo {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #d4a870;
+      margin-bottom: 2.5rem;
+      font-family: 'Courier New', monospace;
+    }
+    
+    h1 {
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin-bottom: 2rem;
+      color: #f5ece0;
+      letter-spacing: 0.01em;
+      line-height: 1.5;
+    }
+    
+    .tagline {
+      font-size: 0.95rem;
+      color: #d4a870;
+      margin-bottom: 1.5rem;
+    }
+    
+    .focus {
+      font-size: 0.75rem;
+      color: #a08060;
+      margin-bottom: 3rem;
+      letter-spacing: 0.02em;
+      line-height: 2.2;
+    }
+    
+    .divider {
+      width: 50px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #d4a870, transparent);
+      margin: 2.5rem auto;
+      border-radius: 2px;
+    }
+    
+    .upcoming {
+      font-size: 0.85rem;
+      color: #a08060;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.1em;
+    }
+    
+    .workshop-links {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    
+    .workshop-link {
+      font-size: 0.95rem;
+      color: #d4a870;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .workshop-link:hover {
+      color: #f5ece0;
+    }
+    
+    .workshop-separator {
+      font-size: 0.95rem;
+      color: #a08060;
+    }
+    
+    .workshop-date {
+      font-size: 0.95rem;
+      color: #d4a870;
+      margin-left: 0.25rem;
+    }
+    
+    .cta {
+      display: inline-block;
+      font-size: 0.8rem;
+      color: #f5ece0;
+      background: transparent;
+      text-decoration: none;
+      border: 1px solid #8a6a50;
+      padding: 0.7rem 1.8rem;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      letter-spacing: 0.05em;
+    }
+    
+    .cta:hover {
+      background: rgba(212, 168, 112, 0.15);
+      border-color: #d4a870;
+      color: #f5ece0;
+    }
+    
+    .footer {
+      margin-top: 4rem;
+      font-size: 0.75rem;
+      color: #8a6a50;
+    }
+    
+    .footer a {
+      color: #a08060;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer a:hover {
+      color: #d4a870;
+    }
+    
+    .team-member {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      color: #a08060;
+      transition: color 0.3s ease;
+    }
+    
+    .team-member:hover {
+      color: #d4a870;
+    }
+    
+    .team-popup {
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #252018;
+      border: 1px solid #3a3028;
+      border-radius: 8px;
+      padding: 1rem;
+      width: 220px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      margin-bottom: 10px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    
+    .team-member:hover .team-popup {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .team-popup img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin-bottom: 0.75rem;
+      object-fit: cover;
+    }
+    
+    .team-popup .name {
+      font-size: 0.85rem;
+      color: #f5ece0;
+      margin-bottom: 0.25rem;
+    }
+    
+    .team-popup .role {
+      font-size: 0.7rem;
+      color: #a08060;
+      margin-bottom: 0.5rem;
+    }
+    
+    .team-popup .bio {
+      font-size: 0.65rem;
+      color: #8a7a68;
+      line-height: 1.5;
+    }
+    
+    .team-popup::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 8px solid transparent;
+      border-top-color: #3a3028;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="ci.svg" alt="" class="logo-icon" />
+    
+    <div class="logo">Connecting Intelligence</div>
+    
+    <h1>Harnessing collective intelligence for AI alignment</h1>
+    
+    <div class="tagline">Running contemplative experiments with AI researchers and decision makers</div>
+    
+    <div class="focus">Sensemaking · Distributed cognition · Epistemic resilience · Trust-building · Embodied ethics · Field coherence</div>
+    
+    <div class="divider"></div>
+    
+    <div class="upcoming">Workshops</div>
+    <div class="workshop-links">
+      <a href="https://lu.ma/kacfb2c8" class="workshop-link" target="_blank">Paris</a>
+      <span class="workshop-separator">&</span>
+      <a href="https://lu.ma/ylhw77r9" class="workshop-link" target="_blank">London</a>
+      <span class="workshop-date">— February 2026</span>
+    </div>
+    
+    <a href="mailto:hello@max-roth.com,lowe.ryan.t@gmail.com" class="cta">Get in touch</a>
+    
+    <div class="footer">
+      <span class="team-member">
+        Max Roth
+        <div class="team-popup">
+          <img src="max.jpg" alt="Max Roth" />
+          <div class="name">Max Roth</div>
+          <div class="role">Co-founder</div>
+          <div class="bio">Facilitator and coach working at the intersection of collective intelligence, trauma-informed practice, and AI safety.</div>
+        </div>
+      </span>
+       & 
+      <span class="team-member">
+        Ryan Lowe
+        <div class="team-popup">
+          <img src="ryan.jpg" alt="Ryan Lowe" />
+          <div class="name">Ryan Lowe</div>
+          <div class="role">Co-founder</div>
+          <div class="bio">Research Ecosystem Lead at the Meaning Alignment Institute. Previously worked on AI alignment at OpenAI.</div>
+        </div>
+      </span>
+    </div>
+  </div>
+</body>
+</html>
