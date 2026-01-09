@@ -169,46 +169,47 @@
       transform: translateX(-50%);
       background: #252018;
       border: 1px solid #3a3028;
-      border-radius: 8px;
-      padding: 1rem;
-      width: 220px;
+      border-radius: 12px;
+      padding: 1.5rem;
+      width: 336px;
       opacity: 0;
       visibility: hidden;
       transition: all 0.3s ease;
-      margin-bottom: 10px;
+      margin-bottom: 14px;
       text-align: center;
       box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     }
     
-    .team-member:hover .team-popup {
+    .team-member:hover .team-popup,
+    .team-member.active .team-popup {
       opacity: 1;
       visibility: visible;
     }
     
     .team-popup img {
-      width: 60px;
-      height: 60px;
+      width: 96px;
+      height: 96px;
       border-radius: 50%;
-      margin-bottom: 0.75rem;
+      margin-bottom: 1.2rem;
       object-fit: cover;
     }
     
     .team-popup .name {
-      font-size: 0.85rem;
+      font-size: 1.2rem;
       color: #f5ece0;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.35rem;
     }
     
     .team-popup .role {
-      font-size: 0.7rem;
+      font-size: 0.96rem;
       color: #a08060;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.7rem;
     }
     
     .team-popup .bio {
-      font-size: 0.65rem;
+      font-size: 0.9rem;
       color: #8a7a68;
-      line-height: 1.5;
+      line-height: 1.6;
     }
     
     .team-popup::after {
@@ -247,7 +248,7 @@
     <a href="mailto:hello@max-roth.com,lowe.ryan.t@gmail.com" class="cta">Get in touch</a>
     
     <div class="footer">
-      <span class="team-member">
+      <span class="team-member" onclick="this.classList.toggle('active')">
         Max Roth
         <div class="team-popup">
           <img src="max.jpg" alt="Max Roth" />
@@ -257,7 +258,7 @@
         </div>
       </span>
        & 
-      <span class="team-member">
+      <span class="team-member" onclick="this.classList.toggle('active')">
         Ryan Lowe
         <div class="team-popup">
           <img src="ryan.jpg" alt="Ryan Lowe" />
@@ -268,5 +269,16 @@
       </span>
     </div>
   </div>
+  
+  <script>
+    // Close popup when tapping anywhere else on mobile
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.team-member')) {
+        document.querySelectorAll('.team-member').forEach(function(el) {
+          el.classList.remove('active');
+        });
+      }
+    });
+  </script>
 </body>
 </html>
