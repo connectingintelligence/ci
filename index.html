@@ -37,7 +37,7 @@
     html { scroll-behavior: smooth; }
 
     body {
-      background: var(--bg) url('paper.png') center / cover no-repeat fixed;
+      background-color: var(--bg);
       color: var(--text);
       font-family: 'Courier New', 'Courier', monospace;
       line-height: 1.8;
@@ -46,8 +46,20 @@
       transition: background-color 0.4s ease, color 0.4s ease;
     }
 
-    [data-theme="dark"] body {
-      background-image: none;
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('paper.png') center / cover no-repeat;
+      z-index: -2;
+      pointer-events: none;
+    }
+
+    [data-theme="dark"] body::before {
+      display: none;
     }
 
     ::selection { background: var(--sage); color: #fff; }
@@ -92,34 +104,7 @@
       padding: 0 2rem;
     }
 
-    /* ─── Watercolor background — full page ─── */
-    .bg-watercolor {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      pointer-events: none;
-      z-index: 0;
-      overflow: hidden;
-    }
-
-    .bg-watercolor img {
-      position: absolute;
-      width: 140%;
-      max-width: none;
-      top: 30%;
-      left: -20%;
-      opacity: 0.6;
-      mix-blend-mode: multiply;
-      transition: opacity 0.4s ease;
-    }
-
-    [data-theme="dark"] .bg-watercolor img {
-      display: none;
-    }
-
-    /* ─── Hero ─── */
+/* ─── Hero ─── */
     .hero {
       display: flex;
       flex-direction: column;
@@ -433,11 +418,6 @@
       <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
     </svg>
   </button>
-
-<!-- Watercolor background -->
-  <div class="bg-watercolor">
-    <img src="watercolor.png" alt="">
-  </div>
 
   <!-- Hero -->
   <section class="hero">
