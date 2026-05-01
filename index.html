@@ -3,512 +3,234 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Connecting Intelligence</title>
-  <link rel="icon" type="image/png" href="favicon.png">
+  <title>Max Roth</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-    /* ─── Light mode (default) ─── */
-    :root {
-      --bg:         #f2efe8;
-      --text:       #2c2a26;
-      --text-mid:   #5a5549;
-      --text-muted: #8a847a;
-      --text-faint: #b5afa5;
-      --sage:       #7a8a6e;
-      --sage-deep:  #4a5a3e;
-      --border:     #d5d0c8;
-      --logo-invert: 0;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-
-    /* ─── Dark mode ─── */
-    [data-theme="dark"] {
-      --bg:         #1c1c1a;
-      --text:       #d5d2cb;
-      --text-mid:   #a5a098;
-      --text-muted: #7a756d;
-      --text-faint: #4a4742;
-      --sage:       #7a8a6e;
-      --sage-deep:  #8a9a7a;
-      --border:     #333130;
-      --logo-invert: 1;
-    }
-
-    html { scroll-behavior: smooth; }
 
     body {
-      background-color: var(--bg);
-      color: var(--text);
-      font-family: 'Courier New', 'Courier', monospace;
-      line-height: 1.8;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-      transition: background-color 0.4s ease, color 0.4s ease;
-    }
-
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('paper.png') center / cover no-repeat;
-      z-index: -2;
-      pointer-events: none;
-    }
-
-    [data-theme="dark"] body::before {
-      display: none;
-    }
-
-    ::selection { background: var(--sage); color: #fff; }
-
-    /* ─── Theme toggle ─── */
-    .theme-toggle {
-      position: fixed;
-      top: 1.5rem;
-      right: 1.8rem;
-      z-index: 100;
-      width: 32px;
-      height: 32px;
-      border: none;
-      background: none;
-      cursor: pointer;
-      color: var(--text-muted);
-      transition: color 0.3s ease;
+      font-family: 'Courier Prime', 'Courier New', monospace;
+      background: #faf5eb;
+      color: #5a4a2a;
+      min-height: 100vh;
       display: flex;
-      align-items: center;
       justify-content: center;
-    }
-
-    .theme-toggle:hover { color: var(--text); }
-
-    .theme-toggle svg {
-      width: 18px;
-      height: 18px;
-    }
-
-    .theme-toggle .icon-sun,
-    .theme-toggle .icon-moon { display: none; }
-
-    [data-theme="dark"] .theme-toggle .icon-sun { display: block; }
-    :root:not([data-theme="dark"]) .theme-toggle .icon-sun { display: none; }
-    :root:not([data-theme="dark"]) .theme-toggle .icon-moon { display: block; }
-    [data-theme="dark"] .theme-toggle .icon-moon { display: none; }
-
-    /* ─── Content wrapper ─── */
-    .content {
-      max-width: 620px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-/* ─── Hero ─── */
-    .hero {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      padding: 8rem 2rem;
       position: relative;
-      padding: 3.5rem 2rem 1rem;
-      z-index: 1;
     }
 
-    .hero-inner {
-      max-width: 620px;
-      margin: 0 auto;
-      width: 100%;
-    }
-
-    .hero-brand {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-logo {
-      width: 24px;
-      height: 24px;
-      opacity: 0.7;
-      animation: breathe 8s ease-in-out infinite;
-      filter: invert(var(--logo-invert));
-      transition: filter 0.4s ease;
-      flex-shrink: 0;
-    }
-
-    @keyframes breathe {
-      0%, 100% { opacity: 0.6; transform: scale(1); }
-      50% { opacity: 0.8; transform: scale(1.03); }
-    }
-
-    .hero-name {
-      font-size: 0.85rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      font-weight: 900;
-      line-height: 1.2;
-    }
-
-    .hero h1 {
-      font-size: clamp(1.5rem, 3.8vw, 2.4rem);
-      font-weight: 400;
-      line-height: 1.5;
+    .container {
       max-width: 520px;
-      letter-spacing: -0.01em;
-      color: var(--text);
-    }
-
-    .hero h1 .em {
-      color: var(--sage-deep);
-      font-style: italic;
-    }
-
-    /* ─── Lower section ─── */
-    .lower {
-      padding: 1.5rem 2rem 3rem;
+      width: 100%;
       position: relative;
       z-index: 1;
     }
 
-    .lower-inner {
-      max-width: 620px;
-      margin: 0 auto;
+    h1 {
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: #7a5a2a;
+      margin: 0;
     }
 
-    /* About */
-    .about-text {
-      font-size: 0.92rem;
-      line-height: 1.85;
-      color: var(--text-mid);
-      margin-bottom: 1.5rem;
-      max-width: 540px;
+    .intro {
+      font-size: 0.95rem;
+      margin-bottom: 1.8rem;
+      line-height: 1.7;
     }
 
-    .about-text p { margin-bottom: 0.8em; }
-    .about-text p:last-child { margin-bottom: 0; }
-
-    /* Keywords with watercolor blobs */
-    .keywords {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem 2rem;
-      margin-bottom: 1.5rem;
+    p {
+      line-height: 1.75;
+      margin-bottom: 1.8rem;
+      font-size: 0.9rem;
     }
 
-    .keyword {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 0.75rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      transition: color 0.4s ease;
-      cursor: default;
-    }
-
-    .keyword:hover { color: var(--text); }
-
-    .blob {
-      width: 18px;
-      height: 18px;
-      border-radius: 47% 53% 52% 48% / 43% 55% 45% 57%;
-      flex-shrink: 0;
-      opacity: 0.7;
-      transition: transform 0.4s ease, opacity 0.4s ease;
-    }
-
-    .keyword:hover .blob {
-      transform: scale(1.15);
-      opacity: 0.9;
-    }
-
-    /* Moodboard 2 palette */
-    .blob-blue    { background: #8a9cba; border-radius: 50% 50% 48% 52% / 45% 55% 45% 55%; }
-    .blob-terra   { background: #c8946a; border-radius: 52% 48% 45% 55% / 50% 50% 50% 50%; }
-    .blob-sage    { background: #9aafa0; border-radius: 45% 55% 52% 48% / 53% 47% 53% 47%; }
-    .blob-olive   { background: #a8a87a; border-radius: 48% 52% 55% 45% / 47% 53% 47% 53%; }
-    .blob-wheat   { background: #c8bd8a; border-radius: 53% 47% 48% 52% / 50% 50% 50% 50%; }
-    .blob-brown   { background: #a37850; border-radius: 47% 53% 50% 50% / 55% 45% 55% 45%; }
-
-    /* Divider */
-    .divider {
-      width: 30px;
-      height: 1px;
-      background: var(--border);
-      margin: 1.5rem 0;
-    }
-
-    /* Team */
-    .team-row {
-      display: flex;
-      gap: 2rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .person {
-      position: relative;
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      cursor: pointer;
-    }
-
-    .person img.person-photo {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      object-fit: cover;
-      transition: opacity 0.3s ease;
-    }
-
-    .person:hover img.person-photo {
-      opacity: 0.7;
-    }
-
-    .person-name {
-      font-size: 0.8rem;
-      color: var(--text);
-      transition: color 0.3s ease;
-    }
-
-    .person:hover .person-name {
-      color: var(--sage);
-    }
-
-    /* Team popup */
-    .team-popup {
-      position: absolute;
-      bottom: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1rem;
-      width: 230px;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-      margin-bottom: 10px;
-      text-align: center;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-      z-index: 10;
-    }
-
-    [data-theme="dark"] .team-popup {
-      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-    }
-
-    .person:hover .team-popup {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .team-popup img {
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      margin-bottom: 0.6rem;
-      object-fit: cover;
-    }
-
-    .team-popup .popup-name {
-      font-size: 0.8rem;
-      color: var(--text);
-      margin-bottom: 0.4rem;
-    }
-
-    .team-popup .popup-bio {
-      font-size: 0.65rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    .team-popup::after {
-      content: '';
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      border: 8px solid transparent;
-      border-top-color: var(--border);
-    }
-
-    /* CTA */
-    .cta-line {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-bottom: 1.2rem;
-    }
-
-    .cta-btn {
-      display: inline-block;
-      font-family: 'Courier New', monospace;
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text);
+    a {
+      color: #b88a3a;
       text-decoration: none;
-      border: 1px solid var(--border);
-      padding: 0.7rem 2rem;
-      border-radius: 30px;
-      transition: all 0.4s ease;
+      border-bottom: 1px solid #b88a3a;
+      transition: opacity 0.3s;
     }
 
-    .cta-btn:hover {
-      background: var(--sage);
-      border-color: var(--sage);
-      color: #fff;
+    a:hover {
+      opacity: 0.7;
     }
 
-    /* Footer */
-    footer {
-      margin-top: 2rem;
-      padding-top: 1rem;
-      border-top: 1px solid var(--border);
-      font-size: 0.65rem;
-      color: var(--text-faint);
+    .links {
+      margin-top: 3rem;
+      font-size: 0.8rem;
       letter-spacing: 0.08em;
     }
 
-    footer a {
-      color: var(--text-muted);
-      text-decoration: none;
-      transition: color 0.3s ease;
+    .links a {
+      margin-right: 1.5rem;
+      border-bottom: none;
     }
 
-    footer a:hover { color: var(--sage); }
-
-    /* ─── Fade-in ─── */
-    .fi {
-      opacity: 0;
-      transform: translateY(14px);
-      transition: opacity 0.9s ease, transform 0.9s ease;
+    .links a:hover {
+      border-bottom: 1px solid #b88a3a;
     }
 
-    .fi.v { opacity: 1; transform: translateY(0); }
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin-bottom: 2rem;
+    }
 
-    .d1 { transition-delay: 0.1s; }
-    .d2 { transition-delay: 0.2s; }
-    .d3 { transition-delay: 0.35s; }
-    .d4 { transition-delay: 0.5s; }
+    .profile-pic {
+      width: 138px;
+      height: 138px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
 
-/* ─── Responsive ─── */
-    @media (max-width: 560px) {
-      .hero { padding: 3rem 1.5rem 1rem; }
-      .hero h1 { font-size: 1.35rem; }
-      .hero-name { font-size: 0.75rem; }
-      .lower { padding: 2rem 1.5rem 2.5rem; }
-      .team-row { flex-direction: column; gap: 1.2rem; }
-      .theme-toggle { top: 1rem; right: 1rem; }
+    .typewriter {
+      display: inline;
+    }
+
+    .typewriter .cursor {
+      display: inline-block;
+      width: 2px;
+      background-color: #5a4a2a;
+      margin-left: 2px;
+      animation: blink 0.8s infinite;
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+
+    /* Dark/Light mode toggle */
+    .theme-toggle {
+      position: fixed;
+      top: 1.5rem;
+      right: 1.5rem;
+      z-index: 100;
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .toggle-track {
+      width: 56px;
+      height: 28px;
+      border-radius: 14px;
+      border: 2px solid #5a4a2a;
+      background: #faf5eb;
+      position: relative;
+      transition: background 0.3s, border-color 0.3s;
+    }
+
+    .toggle-circle {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #5a4a2a;
+      position: absolute;
+      top: 1px;
+      left: 1px;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .theme-toggle:focus-visible .toggle-track {
+      box-shadow: 0 0 0 2px #b88a3a;
+    }
+
+    /* Dark theme */
+    body.dark {
+      background: #2a2a2a;
+      color: #e8e0d0;
+    }
+
+    body.dark h1 {
+      color: #d4b87a;
+    }
+
+    body.dark a {
+      color: #d4a84a;
+      border-bottom-color: #d4a84a;
+    }
+
+    body.dark .links a:hover {
+      border-bottom-color: #d4a84a;
+    }
+
+    body.dark .typewriter .cursor {
+      background-color: #e8e0d0;
+    }
+
+    body.dark .toggle-track {
+      background: #3a3a3a;
+      border-color: #e8e0d0;
+    }
+
+    body.dark .toggle-circle {
+      background: #e8e0d0;
+      transform: translateX(28px);
+    }
+
+    /* Smooth transitions */
+    body, h1, a, .typewriter .cursor {
+      transition: background 0.3s, color 0.3s, border-color 0.3s;
     }
   </style>
 </head>
 <body>
 
-  <!-- Theme toggle -->
   <button class="theme-toggle" aria-label="Toggle dark mode">
-    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-    </svg>
-    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-    </svg>
+    <div class="toggle-track">
+      <div class="toggle-circle"></div>
+    </div>
   </button>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-brand fi">
-        <img src="ci.svg" alt="" class="hero-logo">
-        <div class="hero-name">Connecting Intelligence</div>
-      </div>
-      <h1 class="fi d1">What is the <span class="em">culture</span> we need to meet this moment?</h1>
+  <div class="container">
+    <div class="header">
+      <img src="max pic.png" alt="Max Roth" class="profile-pic">
+      <h1>max roth</h1>
     </div>
-  </section>
-
-  <!-- Everything else -->
-  <div class="lower">
-    <div class="lower-inner">
-
-      <div class="about-text fi">
-        <p>Some cultures are better at solving certain kinds of problems. The methodical, precise engineering culture of Mercedes is effective for building nice cars, but is unwieldy for building good software. The culture you're in shapes what you pay attention to and what solutions you can conceive of.</p>
-        <p>Humanity is facing problems with an unprecedented scope and scale, particularly with the development of powerful AI systems. What cultures will allow us to meet this moment, to widen the aperture of solutions we consider? What does it look like to make progress on this question?</p>
-        <p>At Connecting Intelligence we create sandboxes for experimenting with new cultures. We work with groups of AI researchers and decision makers to meet their challenges with playfulness and connection, which we find creates a kind of group resilience and creativity. One way we do this is through games, where participants create a set of constraints that allow them to feel safe and alive in the face of these challenges.</p>
-        <p>Ultimately, we are innovating on what it could feel like to work on these problems together. What thoughts are thinkable from a coherent state that are unthinkable from a fragmented one?</p>
-      </div>
-
-      <div class="keywords fi d1">
-        <div class="keyword"><span class="blob blob-blue"></span>Sensemaking</div>
-        <div class="keyword"><span class="blob blob-terra"></span>Distributed cognition</div>
-        <div class="keyword"><span class="blob blob-sage"></span>Epistemic resilience</div>
-        <div class="keyword"><span class="blob blob-olive"></span>Trust-building</div>
-        <div class="keyword"><span class="blob blob-wheat"></span>Embodied ethics</div>
-        <div class="keyword"><span class="blob blob-brown"></span>Group coherence</div>
-      </div>
-
-      <div class="divider"></div>
-
-      <div class="team-row fi d2">
-        <div class="person">
-          <img src="max.jpg" alt="Max" class="person-photo">
-          <span class="person-name">Max Roth</span>
-          <div class="team-popup">
-            <img src="max.jpg" alt="Max Roth">
-            <div class="popup-name">Max Roth</div>
-            <div class="popup-bio">Researching human alignment and scaling trust. Background in physics, study with Thomas Hübl on collective trauma, and Tibetan meditation practice.</div>
-          </div>
-        </div>
-        <div class="person">
-          <img src="ryan.jpg" alt="Ryan" class="person-photo">
-          <span class="person-name">Ryan Lowe</span>
-          <div class="team-popup">
-            <img src="ryan.jpg" alt="Ryan Lowe">
-            <div class="popup-name">Ryan Lowe</div>
-            <div class="popup-bio">Research Ecosystem Lead at the Meaning Alignment Institute. Previously worked on AI alignment at OpenAI.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="fi d3">
-        <div class="cta-line">If this question matters to you —</div>
-        <a href="mailto:hello@max-roth.com,lowe.ryan.t@gmail.com" class="cta-btn">Begin a conversation</a>
-      </div>
-
-      <footer>
-        <div>Connecting Intelligence — 2026</div>
-      </footer>
-
-    </div>
+    <p class="intro"><span class="typewriter" id="typewriter"></span><span class="cursor">&nbsp;</span></p>
+    <p>I'm researching human alignment and scaling trust — exploring how collective intelligence, embodied ethics, and playful collaboration can support coordination on hard problems.</p>
+    <p>I'm exploring and experimenting with <a href="https://www.lowe.me">Ryan Lowe</a> under <a href="https://www.connectingintelligence.com">Connecting Intelligence</a> — looking at how contemplative practice can support groups working on hard problems.</p>
+    <p>I also co-created Presence Games with Joseph Ronicke — a meta-game where participants design social architectures together. It's a bottom-up approach to evolving social operating systems that fit the actual body-minds of teams and organizations, cultivating conditions for aliveness and safety.</p>
+    <p>My background includes physics (BSc Leipzig), years of study with Thomas Hübl on collective trauma and relational practice, and Tibetan meditation with Dustin DiPerna.</p>
+    <p>When I'm not facilitating, you'll find me playing tennis, jamming music with friends, woodworking, or making neo-soul music with my partner <a href="https://www.youtube.com/@wiebkemusic">Wiebke</a> in our duo <a href="https://www.youtube.com/watch?v=S1yNv1R1lIY">Imbue</a>.</p>
+    <p class="links"><a href="mailto:hello@max-roth.com">MAIL</a><a href="https://www.linkedin.com/in/max-roth-906a30237/">LINKEDIN</a></p>
   </div>
 
   <script>
-    // Fade-in observer
-    const obs = new IntersectionObserver(es => {
-      es.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.fi').forEach(el => obs.observe(el));
+    const text = "Hi, I'm Max. It's a pleasure to meet you. :)";
+    const typewriter = document.getElementById('typewriter');
+    let i = 0;
 
-    // Theme toggle
-    const toggle = document.querySelector('.theme-toggle');
-    const html = document.documentElement;
-
-    // Check saved preference or system preference
-    const saved = localStorage.getItem('theme');
-    if (saved) {
-      html.setAttribute('data-theme', saved);
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      html.setAttribute('data-theme', 'dark');
+    function type() {
+      if (i < text.length) {
+        typewriter.textContent += text.charAt(i);
+        i++;
+        setTimeout(type, 70);
+      }
     }
 
+    setTimeout(type, 500);
+
+    // Dark/Light mode toggle
+    const toggle = document.querySelector('.theme-toggle');
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark');
+    }
     toggle.addEventListener('click', () => {
-      const isDark = html.getAttribute('data-theme') === 'dark';
-      const next = isDark ? 'light' : 'dark';
-      html.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
+      document.body.classList.toggle('dark');
+      localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
     });
   </script>
 
