@@ -1,516 +1,257 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Connecting Intelligence</title>
-  <link rel="icon" type="image/png" href="favicon.png">
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Connecting Intelligence</title>
+<meta name="description" content="Connecting Intelligence works with the teams building frontier AI on the culture they build it from: Presence Games, facilitation, organisational development and coaching.">
+<link rel="icon" href="assets/logo-brush.png">
+<link rel="stylesheet" href="assets/fonts.css">
+<style>
+body{margin:0;background:#F2EBDF}
+a{color:#2B2621;text-decoration:none}a:hover{color:#9E432C}
+@keyframes u-open{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+.u-open{animation:u-open .45s ease both}
+.st-breathe{transform-origin:50% 50%;animation:st-breathe 11s ease-in-out infinite}
+@keyframes st-breathe{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.06);opacity:.78}}
+@media (prefers-reduced-motion: reduce){.st-breathe{animation:none}}
+.hl{background-image:linear-gradient(100deg,rgba(217,160,74,0) 0%,rgba(217,160,74,.38) 2%,rgba(222,168,84,.30) 60%,rgba(217,160,74,.42) 97%,rgba(217,160,74,0) 100%);background-size:100% 46%;background-position:0 88%;background-repeat:no-repeat;-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:0 4px;border-radius:2px}
+.nw-act{transition:stroke-dashoffset 1.3s cubic-bezier(.4,0,.2,1)}
+.nw-node{transition:fill .5s ease}
+.nw-glow{transition:opacity .8s ease;filter:blur(8px)}
+@media (max-width: 1000px){.nw-map{display:none}}
+@media (min-width: 1001px){.wwf-list{max-width:min(760px, calc(100% - 396px)) !important}}
+.tw-mono{font-family:'Fragment Mono', 'Courier New', monospace !important}
+.tw-cursor{display:inline-block;width:9px;height:1.1em;margin-left:2px;vertical-align:text-bottom;background:#4A3A2B;animation:tw-blink 1.1s steps(1) infinite}
+@keyframes tw-blink{50%{opacity:0}}
+@media (prefers-reduced-motion: reduce){.tw-cursor{animation:none}}
+.lt-room{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.lt-beam{position:absolute;top:-30%;height:160%;background:linear-gradient(90deg,rgba(255,244,220,0) 0%,rgba(255,244,220,.95) 50%,rgba(255,244,220,0) 100%);filter:blur(42px);transform:rotate(18deg);animation:lt-drift 20s ease-in-out infinite alternate}
+@keyframes lt-drift{from{transform:rotate(18deg) translateX(-40px)}to{transform:rotate(20deg) translateX(60px)}}
+.lt-fall{position:absolute;inset:0;pointer-events:none;z-index:0;background:linear-gradient(100deg,rgba(70,52,34,.30) 0%,rgba(70,52,34,.16) 45%,rgba(70,52,34,.22) 100%)}
+@media (prefers-reduced-motion: reduce){.lt-beam{animation:none}}
+@media (prefers-reduced-motion: reduce){.u-open{animation:none}}
+.sap{stroke-dasharray:.05 1.2;stroke-dashoffset:1.25;opacity:.85;animation:sap 8s linear infinite both}
+@keyframes sap{0%{stroke-dashoffset:.05;opacity:0}8%{opacity:.85}85%{opacity:.85}100%{stroke-dashoffset:-1;opacity:0}}
+@media (prefers-reduced-motion: reduce){.sap{display:none}}
+.dot-wander{transform-box:fill-box;transform-origin:center;animation:dw-a 9s ease-in-out infinite}
+.dw-a{animation-name:dw-a}.dw-b{animation-name:dw-b}.dw-c{animation-name:dw-c}
+@keyframes dw-a{0%,100%{transform:translate(0,0) scale(1)}25%{transform:translate(5px,-4px) scale(1.15)}50%{transform:translate(1px,-8px) scale(.9)}75%{transform:translate(-5px,-3px) scale(1.1)}}
+@keyframes dw-b{0%,100%{transform:translate(0,0) scale(1)}30%{transform:translate(-6px,3px) scale(.9)}60%{transform:translate(-2px,7px) scale(1.15)}80%{transform:translate(4px,3px) scale(1)}}
+@keyframes dw-c{0%,100%{transform:translate(0,0) scale(1)}35%{transform:translate(4px,6px) scale(1.12)}70%{transform:translate(7px,-2px) scale(.92)}}
+@media (prefers-reduced-motion: reduce){.dot-wander{animation:none}}
 
-    /* ─── Light mode (default) ─── */
-    :root {
-      --bg:         #f2efe8;
-      --text:       #2c2a26;
-      --text-mid:   #5a5549;
-      --text-muted: #8a847a;
-      --text-faint: #b5afa5;
-      --sage:       #7a8a6e;
-      --sage-deep:  #4a5a3e;
-      --border:     #d5d0c8;
-      --logo-invert: 0;
-    }
+.my-draw{stroke-dasharray:1;animation:my-draw 1.4s cubic-bezier(.4,0,.2,1) both}
+@keyframes my-draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+.my-pop{transform-box:fill-box;transform-origin:center;animation:my-pop .6s cubic-bezier(.3,1.6,.5,1) both}
+@keyframes my-pop{from{transform:scale(0)}to{transform:scale(1)}}
+.my-sig{stroke-dasharray:.035 .965;animation:my-sig 5s linear infinite}
+@keyframes my-sig{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+.my-logo{transform-box:fill-box;transform-origin:center;animation:my-logo 1.2s cubic-bezier(.2,.8,.2,1) both, my-breath 7s ease-in-out 2s infinite}
+@keyframes my-logo{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes my-breath{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+.my-twinkle{animation:my-tw 4s ease-in-out infinite}
+@keyframes my-tw{0%,100%{opacity:1}50%{opacity:.35}}
+@media (prefers-reduced-motion: reduce){.my-draw,.my-pop,.my-sig,.my-logo,.my-twinkle{animation:none}.my-sig{display:none}}
 
-    /* ─── Dark mode ─── */
-    [data-theme="dark"] {
-      --bg:         #1c1c1a;
-      --text:       #d5d2cb;
-      --text-mid:   #a5a098;
-      --text-muted: #7a756d;
-      --text-faint: #4a4742;
-      --sage:       #7a8a6e;
-      --sage-deep:  #8a9a7a;
-      --border:     #333130;
-      --logo-invert: 1;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background-color: var(--bg);
-      color: var(--text);
-      font-family: 'Courier New', 'Courier', monospace;
-      line-height: 1.8;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-      transition: background-color 0.4s ease, color 0.4s ease;
-    }
-
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('paper.png') center / cover no-repeat;
-      z-index: -2;
-      pointer-events: none;
-    }
-
-    [data-theme="dark"] body::before {
-      display: none;
-    }
-
-    ::selection { background: var(--sage); color: #fff; }
-
-    /* ─── Theme toggle ─── */
-    .theme-toggle {
-      position: fixed;
-      top: 1.5rem;
-      right: 1.8rem;
-      z-index: 100;
-      width: 32px;
-      height: 32px;
-      border: none;
-      background: none;
-      cursor: pointer;
-      color: var(--text-muted);
-      transition: color 0.3s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .theme-toggle:hover { color: var(--text); }
-
-    .theme-toggle svg {
-      width: 18px;
-      height: 18px;
-    }
-
-    .theme-toggle .icon-sun,
-    .theme-toggle .icon-moon { display: none; }
-
-    [data-theme="dark"] .theme-toggle .icon-sun { display: block; }
-    :root:not([data-theme="dark"]) .theme-toggle .icon-sun { display: none; }
-    :root:not([data-theme="dark"]) .theme-toggle .icon-moon { display: block; }
-    [data-theme="dark"] .theme-toggle .icon-moon { display: none; }
-
-    /* ─── Content wrapper ─── */
-    .content {
-      max-width: 620px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-/* ─── Hero ─── */
-    .hero {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      position: relative;
-      padding: 3.5rem 2rem 1rem;
-      z-index: 1;
-    }
-
-    .hero-inner {
-      max-width: 620px;
-      margin: 0 auto;
-      width: 100%;
-    }
-
-    .hero-brand {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-logo {
-      width: 24px;
-      height: 24px;
-      opacity: 0.7;
-      animation: breathe 8s ease-in-out infinite;
-      filter: invert(var(--logo-invert));
-      transition: filter 0.4s ease;
-      flex-shrink: 0;
-    }
-
-    @keyframes breathe {
-      0%, 100% { opacity: 0.6; transform: scale(1); }
-      50% { opacity: 0.8; transform: scale(1.03); }
-    }
-
-    .hero-name {
-      font-size: 0.85rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      font-weight: 900;
-      line-height: 1.2;
-    }
-
-    .hero h1 {
-      font-size: clamp(1.5rem, 3.8vw, 2.4rem);
-      font-weight: 400;
-      line-height: 1.5;
-      max-width: 520px;
-      letter-spacing: -0.01em;
-      color: var(--text);
-    }
-
-    .hero h1 .em {
-      color: var(--sage-deep);
-      font-style: italic;
-    }
-
-    /* ─── Lower section ─── */
-    .lower {
-      padding: 1.5rem 2rem 3rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .lower-inner {
-      max-width: 620px;
-      margin: 0 auto;
-    }
-
-    /* About */
-    .about-text {
-      font-size: 0.92rem;
-      line-height: 1.85;
-      color: var(--text-mid);
-      margin-bottom: 1.5rem;
-      max-width: 540px;
-    }
-
-    .about-text p { margin-bottom: 0.8em; }
-    .about-text p:last-child { margin-bottom: 0; }
-
-    /* Keywords with watercolor blobs */
-    .keywords {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem 2rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .keyword {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 0.75rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      transition: color 0.4s ease;
-      cursor: default;
-    }
-
-    .keyword:hover { color: var(--text); }
-
-    .blob {
-      width: 18px;
-      height: 18px;
-      border-radius: 47% 53% 52% 48% / 43% 55% 45% 57%;
-      flex-shrink: 0;
-      opacity: 0.7;
-      transition: transform 0.4s ease, opacity 0.4s ease;
-    }
-
-    .keyword:hover .blob {
-      transform: scale(1.15);
-      opacity: 0.9;
-    }
-
-    /* Moodboard 2 palette */
-    .blob-blue    { background: #8a9cba; border-radius: 50% 50% 48% 52% / 45% 55% 45% 55%; }
-    .blob-terra   { background: #c8946a; border-radius: 52% 48% 45% 55% / 50% 50% 50% 50%; }
-    .blob-sage    { background: #9aafa0; border-radius: 45% 55% 52% 48% / 53% 47% 53% 47%; }
-    .blob-olive   { background: #a8a87a; border-radius: 48% 52% 55% 45% / 47% 53% 47% 53%; }
-    .blob-wheat   { background: #c8bd8a; border-radius: 53% 47% 48% 52% / 50% 50% 50% 50%; }
-    .blob-brown   { background: #a37850; border-radius: 47% 53% 50% 50% / 55% 45% 55% 45%; }
-
-    /* Divider */
-    .divider {
-      width: 30px;
-      height: 1px;
-      background: var(--border);
-      margin: 1.5rem 0;
-    }
-
-    /* Team */
-    .team-row {
-      display: flex;
-      gap: 2rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .person {
-      position: relative;
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      cursor: pointer;
-    }
-
-    .person img.person-photo {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      object-fit: cover;
-      transition: opacity 0.3s ease;
-    }
-
-    .person:hover img.person-photo {
-      opacity: 0.7;
-    }
-
-    .person-name {
-      font-size: 0.8rem;
-      color: var(--text);
-      transition: color 0.3s ease;
-    }
-
-    .person:hover .person-name {
-      color: var(--sage);
-    }
-
-    /* Team popup */
-    .team-popup {
-      position: absolute;
-      bottom: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1rem;
-      width: 230px;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-      margin-bottom: 10px;
-      text-align: center;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-      z-index: 10;
-    }
-
-    [data-theme="dark"] .team-popup {
-      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-    }
-
-    .person:hover .team-popup {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .team-popup img {
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      margin-bottom: 0.6rem;
-      object-fit: cover;
-    }
-
-    .team-popup .popup-name {
-      font-size: 0.8rem;
-      color: var(--text);
-      margin-bottom: 0.4rem;
-    }
-
-    .team-popup .popup-bio {
-      font-size: 0.65rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    .team-popup::after {
-      content: '';
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      border: 8px solid transparent;
-      border-top-color: var(--border);
-    }
-
-    /* CTA */
-    .cta-line {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-bottom: 1.2rem;
-    }
-
-    .cta-btn {
-      display: inline-block;
-      font-family: 'Courier New', monospace;
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text);
-      text-decoration: none;
-      border: 1px solid var(--border);
-      padding: 0.7rem 2rem;
-      border-radius: 30px;
-      transition: all 0.4s ease;
-    }
-
-    .cta-btn:hover {
-      background: var(--sage);
-      border-color: var(--sage);
-      color: #fff;
-    }
-
-    /* Footer */
-    footer {
-      margin-top: 2rem;
-      padding-top: 1rem;
-      border-top: 1px solid var(--border);
-      font-size: 0.65rem;
-      color: var(--text-faint);
-      letter-spacing: 0.08em;
-    }
-
-    footer a {
-      color: var(--text-muted);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    footer a:hover { color: var(--sage); }
-
-    /* ─── Fade-in ─── */
-    .fi {
-      opacity: 0;
-      transform: translateY(14px);
-      transition: opacity 0.9s ease, transform 0.9s ease;
-    }
-
-    .fi.v { opacity: 1; transform: translateY(0); }
-
-    .d1 { transition-delay: 0.1s; }
-    .d2 { transition-delay: 0.2s; }
-    .d3 { transition-delay: 0.35s; }
-    .d4 { transition-delay: 0.5s; }
-
-/* ─── Responsive ─── */
-    @media (max-width: 560px) {
-      .hero { padding: 3rem 1.5rem 1rem; }
-      .hero h1 { font-size: 1.35rem; }
-      .hero-name { font-size: 0.75rem; }
-      .lower { padding: 2rem 1.5rem 2.5rem; }
-      .team-row { flex-direction: column; gap: 1.2rem; }
-      .theme-toggle { top: 1rem; right: 1rem; }
-    }
-  </style>
+@keyframes w-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.w-in{display:inline-block;animation:w-in .6s ease both}
+@media (prefers-reduced-motion: reduce){.w-in{animation:none}}
+em, [style*="font-style: italic"] {font-family: 'EB Garamond', Georgia, serif !important}
+h1 {font-weight: 500 !important; letter-spacing: -0.025em !important; line-height: 0.98 !important}
+</style>
 </head>
 <body>
-
-  <!-- Theme toggle -->
-  <button class="theme-toggle" aria-label="Toggle dark mode">
-    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-    </svg>
-    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-    </svg>
-  </button>
-
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-brand fi">
-        <img src="ci.svg" alt="" class="hero-logo">
-        <div class="hero-name">Connecting Intelligence</div>
+<div style="position: relative; font-family: 'Bricolage Grotesque', 'Helvetica Neue', sans-serif; color: #2B2621; background: #F2EBDF; overflow: hidden; min-height: 100vh; display: flex; flex-direction: column">
+  <svg aria-hidden="true" width="0" height="0" style="position: absolute">
+  <filter id="u-brush" x="-15%" y="-15%" width="130%" height="130%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="7" result="n"></feTurbulence>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="16" xChannelSelector="R" yChannelSelector="G" result="d"></feDisplacementMap>
+    <feTurbulence type="fractalNoise" baseFrequency="0.7 0.06" numOctaves="2" seed="3" result="g"></feTurbulence>
+    <feColorMatrix in="g" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -2.4 0 0 0 2.05" result="gm"></feColorMatrix>
+    <feComposite in="d" in2="gm" operator="in"></feComposite>
+  </filter>
+  <filter id="u-ink" x="-5%" y="-60%" width="110%" height="220%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="5" result="n"></feTurbulence>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="9" xChannelSelector="R" yChannelSelector="G" result="d"></feDisplacementMap>
+    <feTurbulence type="fractalNoise" baseFrequency="0.5 0.04" numOctaves="2" seed="8" result="g"></feTurbulence>
+    <feColorMatrix in="g" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -1.3 0 0 0 1.6" result="gm"></feColorMatrix>
+    <feComposite in="d" in2="gm" operator="in"></feComposite>
+  </filter>
+  <filter id="u-soft" x="-15%" y="-15%" width="130%" height="130%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="11" result="n"></feTurbulence>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="22" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+  </filter>
+</svg>
+  <div style="position: relative; min-height: 820px; display: flex; flex-direction: column; width: 100%">
+    
+    <div aria-hidden="true" style="position: absolute; left: 70%; top: 50%; width: min(50vw, 740px); aspect-ratio: 1 / 1; transform: translate(-50%, -50%)">
+      
+      <div style="position: absolute; left: 50%; top: 50%; width: 44%; transform: translate(-50%, -50%)"><img class="my-logo" src="assets/logo-brush.png" alt="" style="width: 100%; display: block; mix-blend-mode: multiply"></div>
+    </div>
+    <div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(242,235,223,0.95) 0%, rgba(242,235,223,0.75) 40%, rgba(242,235,223,0) 62%)"></div>
+    <header style="position: relative; z-index: 30; width: 100%; box-sizing: border-box; max-width: 1580px; margin: 0 auto; padding: 20px clamp(40px, 11vw, 170px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
+    <a href="index.html" aria-label="Connecting Intelligence, home" style="display: inline-flex; align-items: center"><span style="display: inline-flex; align-items: center; gap: 10px"><img src="assets/logo-brush.png" alt="" style="width: 30px; height: 30px; mix-blend-mode: multiply"><span style="font-family: 'Bricolage Grotesque', 'Helvetica Neue', sans-serif; font-size: 19px">Connecting Intelligence</span></span></a>
+    <nav style="position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 28px; font-family: 'Bricolage Grotesque', 'Helvetica Neue', sans-serif; font-size: 18px">
+      <a href="index.html" aria-current="page" style="padding: 12px 0; color: #2B2621; border-bottom: 1px solid #2B2621">Home</a>
+      <a href="work.html" style="padding: 12px 0; color: #6A5E50">The work</a>
+      <a href="people.html" style="padding: 12px 0; color: #6A5E50">People</a>
+      <button type="button" id="contact-btn" aria-expanded="false" aria-controls="contact-pop" style="font-family: 'Bricolage Grotesque', 'Helvetica Neue', sans-serif; font-size: 18px; cursor: pointer; border: none; background: none; padding: 12px 0; min-height: 44px; color: #9E432C">Contact</button>
+      <div id="contact-pop" hidden>
+        <div role="dialog" aria-label="Contact" style="position: absolute; right: -6px; top: calc(100% + 14px); width: min(400px, 86vw); box-sizing: border-box; background: #F6F0E4; padding: 24px 26px 22px; box-shadow: 0 18px 40px rgba(70,50,30,0.2); transform: rotate(-0.6deg); text-align: left">
+          <span aria-hidden="true" style="position: absolute; top: -11px; left: 40%; width: 78px; height: 22px; background: rgba(232,221,196,0.85); transform: rotate(2deg)"></span>
+          <p style="margin: 0 0 8px; font-size: 24px">Start a conversation</p>
+          <p style="margin: 0; font-size: 17px; line-height: 1.5; color: #6A5E50">Working inside a lab and feeling this question? Write to us.</p>
+          <a href="mailto:hello@connectingintelligence.com" style="display: inline-flex; align-items: center; min-height: 44px; margin-top: 10px; color: #9E432C; text-decoration: underline; text-underline-offset: 4px; font-size: 18px">hello@connectingintelligence.com</a>
+        </div>
       </div>
-      <h1 class="fi d1">What is the <span class="em">culture</span> we need to meet this moment?</h1>
+    </nav>
+  </header>
+    <section style="position: relative; z-index: 2; flex: 1; width: 100%; max-width: 1580px; margin: 0 auto; box-sizing: border-box; padding: 40px clamp(40px, 11vw, 170px) 120px; display: flex; flex-direction: column; justify-content: center">
+      <h1 style="margin: 0; font-weight: 400; font-size: clamp(3rem, 6vw, 5.25rem); line-height: 1.02; max-width: 13ch">What culture<br>do we need<br>to meet<br>this moment?</h1>
+      <p class="tw-mono" style="margin: 36px 0 0; font-size: 17px; letter-spacing: 0.01em; color: #6A5E50"><span style="color: #9E432C">&gt;</span> building cultures that feel <span id="tw-word" style="color: #4A3A2B">alive</span><span class="tw-cursor" aria-hidden="true"></span></p>
+    </section>
+  </div>
+  
+  <section style="position: relative; z-index: 2; background: #E2D5BF">
+    <svg class="st-breathe" aria-hidden="true" viewBox="0 0 400 400" style="position: absolute; left: -150px; top: 120px; width: 560px; height: 560px; pointer-events: none; z-index: 0"><circle cx="200" cy="200" r="150" fill="#C4A97F" opacity="0.5" filter="url(#u-soft)"></circle><circle cx="240" cy="170" r="90" fill="#C4A97F" opacity="0.35" filter="url(#u-soft)"></circle></svg>
+    <div style="position: relative; z-index: 1; max-width: 1240px; margin: 0 auto; padding: 120px clamp(40px, 11vw, 170px) 120px; display: flex; flex-wrap: wrap; align-items: stretch; gap: 40px 88px">
+      <div style="flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; justify-content: flex-start; gap: 28px">
+        <p style="margin: 0; font-size: clamp(1.6rem, 2.6vw, 2.2rem); line-height: 1.4; font-weight: 500"><span class="hl">What thoughts are thinkable from a coherent state that are unthinkable from a fragmented one?</span></p>
+      </div>
+      <div style="flex: 1 1 420px; min-width: 0">
+        <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #463D33">We support teams at the AI frontier in creating cultures that feel safe and alive. Even under intense pressure, we want these teams to think clearly, disagree honestly, operate playfully and feel supported by each other.</p>
+        <p style="margin: 20px 0 0; font-size: 18px; line-height: 1.6; color: #463D33">We run offsites, workshops and team experiences that give people a taste of how fresh and playful working together can feel. We then look at the organisational level and help leaders integrate this into the way the team operates.</p>
+
+        <a href="work.html" style="display: inline-flex; align-items: center; min-height: 48px; margin-top: 22px; font-style: italic; font-size: 21px; color: #9E432C; border-bottom: 1px solid #9E432C">read about the work →</a>
+      </div>
     </div>
   </section>
-
-  <!-- Everything else -->
-  <div class="lower">
-    <div class="lower-inner">
-
-      <div class="about-text fi">
-        <p>Some cultures are better at solving certain kinds of problems. The methodical, precise engineering culture of Mercedes is effective for building nice cars, but is unwieldy for building good software. The culture you're in shapes what you pay attention to and what solutions you can conceive of.</p>
-        <p>Humanity is facing problems with an unprecedented scope and scale, particularly with the development of powerful AI systems. What cultures will allow us to meet this moment, to widen the aperture of solutions we consider? What does it look like to make progress on this question?</p>
-        <p>Connecting Intelligence is a research practice exploring how to create sandboxes for new cultures. The work draws on facilitated games and group practices where participants design the constraints that allow them to feel safe and alive in the face of complex challenges.</p>
-        <p>Ultimately, we are innovating on what it could feel like to work on these problems together. What thoughts are thinkable from a coherent state that are unthinkable from a fragmented one?</p>
+  <section style="position: relative; z-index: 2; background: #F2EBDF; color: #2B2621; overflow: hidden">
+    
+    
+    
+    <div style="position: relative; max-width: 1240px; margin: 0 auto; padding: 120px clamp(40px, 11vw, 170px) 120px">
+      <div class="nw-map" style="position: absolute; right: clamp(40px, 11vw, 170px); top: 175px; width: min(306px, 28vw)">
+        <img src="assets/weaver-1919-besseya.jpg" alt="Fig. 39, Besseya plantaginea, showing the widely spreading root system: two plants whose roots merge into one network (J. E. Weaver, 1919)" style="width: 100%; display: block; box-shadow: 0 14px 30px rgba(70,50,30,0.14), 0 2px 4px rgba(70,50,30,0.08)">
       </div>
-
-      <div class="keywords fi d1">
-        <div class="keyword"><span class="blob blob-blue"></span>Sensemaking</div>
-        <div class="keyword"><span class="blob blob-terra"></span>Distributed cognition</div>
-        <div class="keyword"><span class="blob blob-sage"></span>Epistemic resilience</div>
-        <div class="keyword"><span class="blob blob-olive"></span>Trust-building</div>
-        <div class="keyword"><span class="blob blob-wheat"></span>Embodied ethics</div>
-        <div class="keyword"><span class="blob blob-brown"></span>Group coherence</div>
-      </div>
-
-      <div class="divider"></div>
-
-      <div class="team-row fi d2">
-        <div class="person">
-          <img src="max.jpg" alt="Max" class="person-photo">
-          <span class="person-name">Max Roth</span>
-          <div class="team-popup">
-            <img src="max.jpg" alt="Max Roth">
-            <div class="popup-name">Max Roth</div>
-            <div class="popup-bio">Researching human alignment and scaling trust. Background in physics, study with Thomas Hübl on collective trauma, and Tibetan meditation practice.</div>
+      <p style="margin: 0 0 24px; font-style: italic; font-size: 24px; color: #A9662F">what we work from</p>
+      <ol class="wwf-list" style="list-style: none; margin: 0; padding: 0; max-width: 760px; border-bottom: 1.5px dashed rgba(43,38,33,0.2)">
+        <li style="border-top: 1.5px dashed rgba(43,38,33,0.2)">
+          <button type="button" data-acc="0" aria-expanded="false" style="all: unset; box-sizing: border-box; width: 100%; min-height: 64px; padding: 18px 0; cursor: pointer; display: flex; align-items: baseline; gap: 18px; font-family: 'Bricolage Grotesque', 'Helvetica Neue', sans-serif">
+            <span style="font-size: 18px; color: #A9662F; min-width: 14px">1</span>
+            <h3 style="margin: 0; flex: 1; font-weight: 400; font-size: clamp(1.6rem, 2.4vw, 2.125rem); line-height: 1.15; color: #2B2621">Trust is infrastructure</h3>
+            <span aria-hidden="true" style="font-size: 28px; line-height: 1; color: #A9662F; width: 24px; text-align: center" class="acc-sign">+</span>
+          </button>
+          <div data-panel="0" hidden>
+            <div class="u-open" style="padding: 0 44px 34px 32px; max-width: 640px">
+              <p style="margin: 0 0 18px; font-size: 21px; line-height: 1.5; font-style: italic; color: #5C5246">With trust, information flows differently.</p>
+              
+                  <p style="margin: 14px 0 0; font-size: 18px; line-height: 1.6; color: #463D33">Trust changes what can be said, heard and felt in a team. With more trust, our attention and curiosity shift. We listen more deeply, and differing opinions become workable instead of threatening.</p>
+                
+                  <p style="margin: 14px 0 0; font-size: 18px; line-height: 1.6; color: #463D33">Without trust, information gets noisy and fragmented. It becomes hard to tell the signal from noise, and everything gets slower and more expensive. In this way, trust is the foundational infrastructure of effective teams.</p>
+                
+            </div>
           </div>
-        </div>
-        <div class="person">
-          <img src="ryan.jpg" alt="Ryan" class="person-photo">
-          <span class="person-name">Ryan Lowe</span>
-          <div class="team-popup">
-            <img src="ryan.jpg" alt="Ryan Lowe">
-            <div class="popup-name">Ryan Lowe</div>
-            <div class="popup-bio">Research Ecosystem Lead at the Meaning Alignment Institute. Previously worked on AI alignment at OpenAI.</div>
+        </li>
+      
+        <li style="border-top: 1.5px dashed rgba(43,38,33,0.2)">
+          <button type="button" data-acc="1" aria-expanded="false" style="all: unset; box-sizing: border-box; width: 100%; min-height: 64px; padding: 18px 0; cursor: pointer; display: flex; align-items: baseline; gap: 18px; font-family: 'Bricolage Grotesque', 'Helvetica Neue', sans-serif">
+            <span style="font-size: 18px; color: #A9662F; min-width: 14px">2</span>
+            <h3 style="margin: 0; flex: 1; font-weight: 400; font-size: clamp(1.6rem, 2.4vw, 2.125rem); line-height: 1.15; color: #2B2621">Safe-to-fail experiments</h3>
+            <span aria-hidden="true" style="font-size: 28px; line-height: 1; color: #A9662F; width: 24px; text-align: center" class="acc-sign">+</span>
+          </button>
+          <div data-panel="1" hidden>
+            <div class="u-open" style="padding: 0 44px 34px 32px; max-width: 640px">
+              <p style="margin: 0 0 18px; font-size: 21px; line-height: 1.5; font-style: italic; color: #5C5246">Create containers that allow playful and safe experimentation.</p>
+              
+                  <p style="margin: 14px 0 0; font-size: 18px; line-height: 1.6; color: #463D33">Experimenting is often the best path to something new. When we design new rules, rituals or structures for a team, we want to try things without harming the social environment they live in.</p>
+                
+                  <p style="margin: 14px 0 0; font-size: 18px; line-height: 1.6; color: #463D33">As a team grows its capacity to run safe-to-fail experiments within its culture, what new possibilities emerge in its technical work?</p>
+                
+            </div>
           </div>
-        </div>
-      </div>
-
-      <div class="fi d3">
-        <div class="cta-line">If this question matters to you —</div>
-        <a href="mailto:hello@max-roth.com,lowe.ryan.t@gmail.com" class="cta-btn">Begin a conversation</a>
-      </div>
-
-      <footer>
-        <div>Connecting Intelligence — 2026</div>
-      </footer>
-
+        </li>
+      
+        <li style="border-top: 1.5px dashed rgba(43,38,33,0.2)">
+          <button type="button" data-acc="2" aria-expanded="false" style="all: unset; box-sizing: border-box; width: 100%; min-height: 64px; padding: 18px 0; cursor: pointer; display: flex; align-items: baseline; gap: 18px; font-family: 'Bricolage Grotesque', 'Helvetica Neue', sans-serif">
+            <span style="font-size: 18px; color: #A9662F; min-width: 14px">3</span>
+            <h3 style="margin: 0; flex: 1; font-weight: 400; font-size: clamp(1.6rem, 2.4vw, 2.125rem); line-height: 1.15; color: #2B2621">Embodied ethics</h3>
+            <span aria-hidden="true" style="font-size: 28px; line-height: 1; color: #A9662F; width: 24px; text-align: center" class="acc-sign">+</span>
+          </button>
+          <div data-panel="2" hidden>
+            <div class="u-open" style="padding: 0 44px 34px 32px; max-width: 640px">
+              <p style="margin: 0 0 18px; font-size: 21px; line-height: 1.5; font-style: italic; color: #5C5246">Walking the walk</p>
+              
+                  <p style="margin: 14px 0 0; font-size: 18px; line-height: 1.6; color: #463D33">We believe our bodies notice when something is off: a decision that doesn't sit right, a behaviour that costs us a night's sleep.</p>
+                
+                  <p style="margin: 14px 0 0; font-size: 18px; line-height: 1.6; color: #463D33">Ethics as abstract principles can matter a lot. But what does it take to actually live them, day to day, even in the most challenging situations? Integrity lives in our bodies, our hearts and our minds, not only as ideas.</p>
+                
+            </div>
+          </div>
+        </li>
+      
+        <li style="border-top: 1.5px dashed rgba(43,38,33,0.2)">
+          <button type="button" data-acc="3" aria-expanded="false" style="all: unset; box-sizing: border-box; width: 100%; min-height: 64px; padding: 18px 0; cursor: pointer; display: flex; align-items: baseline; gap: 18px; font-family: 'Bricolage Grotesque', 'Helvetica Neue', sans-serif">
+            <span style="font-size: 18px; color: #A9662F; min-width: 14px">4</span>
+            <h3 style="margin: 0; flex: 1; font-weight: 400; font-size: clamp(1.6rem, 2.4vw, 2.125rem); line-height: 1.15; color: #2B2621">Collective resilience</h3>
+            <span aria-hidden="true" style="font-size: 28px; line-height: 1; color: #A9662F; width: 24px; text-align: center" class="acc-sign">+</span>
+          </button>
+          <div data-panel="3" hidden>
+            <div class="u-open" style="padding: 0 44px 34px 32px; max-width: 640px">
+              <p style="margin: 0 0 18px; font-size: 21px; line-height: 1.5; font-style: italic; color: #5C5246">Not bouncing back, but growing through.</p>
+              
+                  <p style="margin: 14px 0 0; font-size: 18px; line-height: 1.6; color: #463D33">Resilience is often described as bouncing back: going through something hard and returning to how things were. We see it differently: it’s the ability to stay in relationship with a challenging situation, and to turn what happened into learning.</p>
+                
+                  <p style="margin: 14px 0 0; font-size: 18px; line-height: 1.6; color: #463D33">When we only bounce back, we tend to repeat the same patterns. When we digest what happened, we get wiser.</p>
+                
+                  <p style="margin: 14px 0 0; font-size: 18px; line-height: 1.6; color: #463D33">This is true for teams and organisations too. Collective resilience is a group's ability to stay in contact with what is hard, to see it together, and to turn it into shared learning, instead of moving on and repeating it.</p>
+                
+            </div>
+          </div>
+        </li>
+      </ol>
     </div>
+  </section>
+  <div style="position: relative">
+    
+    <footer style="position: relative; z-index: 2; max-width: 1240px; margin: 0 auto; padding: 44px clamp(40px, 11vw, 170px) 40px; color: #6A5E50">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 24px; padding-top: 28px; border-top: 1px solid rgba(43,38,33,0.14); font-size: 14px">
+      <span>Connecting Intelligence LLC · 2026</span>
+      <a href="privacy.html" style="color: #6A5E50">Privacy</a>
+    </div>
+  </footer>
   </div>
-
-  <script>
-    // Fade-in observer
-    const obs = new IntersectionObserver(es => {
-      es.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.fi').forEach(el => obs.observe(el));
-
-    // Theme toggle
-    const toggle = document.querySelector('.theme-toggle');
-    const html = document.documentElement;
-
-    // Check saved preference or system preference
-    const saved = localStorage.getItem('theme');
-    if (saved) {
-      html.setAttribute('data-theme', saved);
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      html.setAttribute('data-theme', 'dark');
-    }
-
-    toggle.addEventListener('click', () => {
-      const isDark = html.getAttribute('data-theme') === 'dark';
-      const next = isDark ? 'light' : 'dark';
-      html.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-    });
-  </script>
-
+  <svg aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 20; mix-blend-mode: multiply">
+  <filter id="u-grain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" seed="4"></feTurbulence><feColorMatrix type="matrix" values="0 0 0 0 0.45  0 0 0 0 0.36  0 0 0 0 0.25  0 0 0 0.22 0"></feColorMatrix></filter>
+  <filter id="u-cloud"><feTurbulence type="fractalNoise" baseFrequency="0.004 0.009" numOctaves="3" seed="9"></feTurbulence><feColorMatrix type="matrix" values="0 0 0 0 0.45  0 0 0 0 0.36  0 0 0 0 0.25  0 0 0 0.16 0"></feColorMatrix></filter>
+  <rect width="100%" height="100%" filter="url(#u-cloud)"></rect>
+  <rect width="100%" height="100%" filter="url(#u-grain)"></rect>
+  
+</svg>
+</div>
+<script>
+(function(){
+  var b=document.getElementById('contact-btn'), p=document.getElementById('contact-pop');
+  if(b&&p){ b.addEventListener('click',function(e){ e.stopPropagation(); var o=p.hidden; p.hidden=!o; b.setAttribute('aria-expanded',String(o)); });
+    document.addEventListener('click',function(e){ if(!p.hidden && !p.contains(e.target)){ p.hidden=true; b.setAttribute('aria-expanded','false'); } });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape'){ p.hidden=true; b.setAttribute('aria-expanded','false'); } }); }
+  function clocks(){ document.querySelectorAll('[data-tz]').forEach(function(li){ var t='--:--'; try{ t=new Intl.DateTimeFormat('en-GB',{hour:'2-digit',minute:'2-digit',timeZone:li.dataset.tz}).format(new Date()); }catch(e){}
+    li.querySelector('.clk-t').textContent=t; var h=parseInt(t,10), day=h>=6&&h<19, d=li.querySelector('.clk-dot');
+    d.style.background=day?'#D9A04A':'transparent'; d.style.borderColor=day?'#D9A04A':'#8A7D6B'; }); }
+  clocks(); setInterval(clocks,30000);
+})();
+(function(){
+  var el=document.getElementById('tw-word'); var words=["alive","safe","playful","coherent","honest","curious"];
+  if(el && !matchMedia('(prefers-reduced-motion: reduce)').matches){ var wi=0, ci=words[0].length, del=false;
+    function type(){ var w=words[wi]; ci+=del?-1:1; el.textContent=w.slice(0,ci); var d=del?55:100;
+      if(!del&&ci>=w.length){d=2400;del=true;} else if(del&&ci<=0){del=false;wi=(wi+1)%words.length;d=400;} setTimeout(type,d); }
+    setTimeout(type,2400); }
+  var btns=document.querySelectorAll('[data-acc]');
+  btns.forEach(function(b){ b.addEventListener('click',function(){ var i=b.dataset.acc, open=b.getAttribute('aria-expanded')==='true';
+    btns.forEach(function(x){ x.setAttribute('aria-expanded','false'); x.querySelector('.acc-sign').textContent='+'; document.querySelector('[data-panel="'+x.dataset.acc+'"]').hidden=true; });
+    if(!open){ b.setAttribute('aria-expanded','true'); b.querySelector('.acc-sign').textContent='\u2212'; document.querySelector('[data-panel="'+i+'"]').hidden=false; } }); });
+})();
+</script>
 </body>
 </html>

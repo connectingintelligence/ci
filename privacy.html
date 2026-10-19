@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy — Connecting Intelligence</title>
+<meta name="description" content="Connecting Intelligence works with the teams building frontier AI on the culture they build it from: Presence Games, facilitation, organisational development and coaching.">
+<link rel="icon" href="assets/logo-brush.png">
+<link rel="stylesheet" href="assets/fonts.css">
+<style>
+body{margin:0;background:#F2EBDF}
+a{color:#2B2621;text-decoration:none}a:hover{color:#9E432C}
+.tw-mono{font-family:'Fragment Mono', 'Courier New', monospace !important}
+.hl{background-image:linear-gradient(100deg,rgba(217,160,74,0) 0%,rgba(217,160,74,.38) 2%,rgba(222,168,84,.30) 60%,rgba(217,160,74,.42) 97%,rgba(217,160,74,0) 100%);background-size:100% 46%;background-position:0 88%;background-repeat:no-repeat;-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:0 4px;border-radius:2px}
+
+.my-draw{stroke-dasharray:1;animation:my-draw 1.4s cubic-bezier(.4,0,.2,1) both}
+@keyframes my-draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+.my-pop{transform-box:fill-box;transform-origin:center;animation:my-pop .6s cubic-bezier(.3,1.6,.5,1) both}
+@keyframes my-pop{from{transform:scale(0)}to{transform:scale(1)}}
+.my-sig{stroke-dasharray:.035 .965;animation:my-sig 5s linear infinite}
+@keyframes my-sig{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+.my-logo{transform-box:fill-box;transform-origin:center;animation:my-logo 1.2s cubic-bezier(.2,.8,.2,1) both, my-breath 7s ease-in-out 2s infinite}
+@keyframes my-logo{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes my-breath{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+.my-twinkle{animation:my-tw 4s ease-in-out infinite}
+@keyframes my-tw{0%,100%{opacity:1}50%{opacity:.35}}
+@media (prefers-reduced-motion: reduce){.my-draw,.my-pop,.my-sig,.my-logo,.my-twinkle{animation:none}.my-sig{display:none}}
+
+@keyframes w-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.w-in{display:inline-block;animation:w-in .6s ease both}
+@media (prefers-reduced-motion: reduce){.w-in{animation:none}}
+em, [style*="font-style: italic"] {font-family: 'EB Garamond', Georgia, serif !important}
+h1 {font-weight: 500 !important; letter-spacing: -0.025em !important; line-height: 0.98 !important}
+</style>
+</head>
+<body>
+<div style="position: relative; font-family: 'Bricolage Grotesque', 'Helvetica Neue', sans-serif; color: #2B2621; background: #F2EBDF; overflow: hidden; min-height: 100vh; display: flex; flex-direction: column">
+  <svg aria-hidden="true" width="0" height="0" style="position: absolute">
+  <filter id="pp-brush" x="-15%" y="-15%" width="130%" height="130%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="7" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="16" xChannelSelector="R" yChannelSelector="G" result="d"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.7 0.06" numOctaves="2" seed="3" result="g"/>
+    <feColorMatrix in="g" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -2.4 0 0 0 2.05" result="gm"/>
+    <feComposite in="d" in2="gm" operator="in"/>
+  </filter>
+  <filter id="pp-ink" x="-5%" y="-60%" width="110%" height="220%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="5" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="9" xChannelSelector="R" yChannelSelector="G" result="d"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.5 0.04" numOctaves="2" seed="8" result="g"/>
+    <feColorMatrix in="g" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -1.3 0 0 0 1.6" result="gm"/>
+    <feComposite in="d" in2="gm" operator="in"/>
+  </filter>
+  <filter id="pp-soft" x="-15%" y="-15%" width="130%" height="130%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="11" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="22" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+  <div style="position: relative"><header style="position: relative; z-index: 30; width: 100%; box-sizing: border-box; max-width: 1580px; margin: 0 auto; padding: 20px clamp(40px, 11vw, 170px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
+    <a href="index.html" aria-label="Connecting Intelligence, home" style="display: inline-flex; align-items: center"><span style="display: inline-flex; align-items: center; gap: 10px"><img src="assets/logo-brush.png" alt="" style="width: 30px; height: 30px; mix-blend-mode: multiply"><span style="font-family: 'Bricolage Grotesque', 'Helvetica Neue', sans-serif; font-size: 19px">Connecting Intelligence</span></span></a>
+    <nav style="position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 28px; font-family: 'Bricolage Grotesque', 'Helvetica Neue', sans-serif; font-size: 18px">
+      <a href="index.html" style="padding: 12px 0">Home</a>
+      <a href="work.html" style="padding: 12px 0; color: #6A5E50">The work</a>
+      <a href="people.html" style="padding: 12px 0; color: #6A5E50">People</a>
+      <button type="button" id="contact-btn" aria-expanded="false" aria-controls="contact-pop" style="font-family: 'Bricolage Grotesque', 'Helvetica Neue', sans-serif; font-size: 18px; cursor: pointer; border: none; background: none; padding: 12px 0; min-height: 44px; color: #9E432C">Contact</button>
+      <div id="contact-pop" hidden>
+        <div role="dialog" aria-label="Contact" style="position: absolute; right: -6px; top: calc(100% + 14px); width: min(400px, 86vw); box-sizing: border-box; background: #F6F0E4; padding: 24px 26px 22px; box-shadow: 0 18px 40px rgba(70,50,30,0.2); transform: rotate(-0.6deg); text-align: left">
+          <span aria-hidden="true" style="position: absolute; top: -11px; left: 40%; width: 78px; height: 22px; background: rgba(232,221,196,0.85); transform: rotate(2deg)"></span>
+          <p style="margin: 0 0 8px; font-size: 24px">Start a conversation</p>
+          <p style="margin: 0; font-size: 17px; line-height: 1.5; color: #6A5E50">Working inside a lab and feeling this question? Write to us.</p>
+          <a href="mailto:hello@connectingintelligence.com" style="display: inline-flex; align-items: center; min-height: 44px; margin-top: 10px; color: #9E432C; text-decoration: underline; text-underline-offset: 4px; font-size: 18px">hello@connectingintelligence.com</a>
+        </div>
+      </div>
+    </nav>
+  </header></div>
+  <section style="position: relative; z-index: 2; max-width: 1580px; width: 100%; box-sizing: border-box; margin: 0 auto; padding: 70px clamp(40px, 11vw, 170px) 60px">
+      <h1 style="margin: 0; font-size: clamp(3rem, 6.2vw, 5.4rem); max-width: 12ch">Privacy policy.</h1>
+    </section>
+    <section style="position: relative; z-index: 2"><div style="max-width: 760px; margin: 0 auto; padding: 20px 40px 120px"><p style="margin: 0 0 14px; font-size: 18px; line-height: 1.65; color: #463D33; font-size: 20px">This policy explains what personal information Connecting Intelligence LLC (“we”, “us”) collects through connectingintelligence.com, why, and the choices and rights you have. We keep it short because we collect very little.</p><h2 style="margin: 56px 0 14px; font-size: clamp(1.4rem, 1.9vw, 1.625rem); font-weight: 500; letter-spacing: -0.015em">Who we are</h2><p style="margin: 0 0 14px; font-size: 18px; line-height: 1.65; color: #463D33">Connecting Intelligence LLC, 2261 Market Street STE 74908, San Francisco, CA 94114, USA. We are the “controller” of the personal information described here. For anything related to privacy, write to <a href="mailto:hello@connectingintelligence.com" style="color: #9E432C; border-bottom: 1px solid rgba(158,67,44,0.4)">hello@connectingintelligence.com</a>.</p><h2 style="margin: 56px 0 14px; font-size: clamp(1.4rem, 1.9vw, 1.625rem); font-weight: 500; letter-spacing: -0.015em">What we collect</h2><p style="margin: 0 0 14px; font-size: 18px; line-height: 1.65; color: #463D33">We do not run analytics, advertising or tracking tools on this website, and we do not set cookies.</p><ul style="margin: 0 0 14px; padding-left: 22px"><li style="margin: 0 0 8px; font-size: 18px; line-height: 1.6; color: #463D33"><strong>When you email us:</strong> your name, email address and whatever you choose to write. Our email runs on Google Workspace. We use it only to reply and to continue the conversation you started.</li><li style="margin: 0 0 8px; font-size: 18px; line-height: 1.6; color: #463D33"><strong>Technical data:</strong> like every website, our hosting provider (GitHub Pages, operated by GitHub, Inc.) automatically processes your IP address, browser type and the pages requested, to deliver the site and keep it secure. These server logs are kept for a short period and are not used to identify you.</li><li style="margin: 0 0 8px; font-size: 18px; line-height: 1.6; color: #463D33"><strong>Fonts:</strong> our fonts are served from this website itself. Your browser does not connect to Google Fonts or any other third-party font service.</li></ul><p style="margin: 0 0 14px; font-size: 18px; line-height: 1.65; color: #463D33">You never have to give us personal information to read this website. Emailing us is voluntary; if you do not, we simply cannot reply.</p><h2 style="margin: 56px 0 14px; font-size: clamp(1.4rem, 1.9vw, 1.625rem); font-weight: 500; letter-spacing: -0.015em">What we do not do</h2><ul style="margin: 0 0 14px; padding-left: 22px"><li style="margin: 0 0 8px; font-size: 18px; line-height: 1.6; color: #463D33">We do not sell or rent personal information.</li><li style="margin: 0 0 8px; font-size: 18px; line-height: 1.6; color: #463D33">We do not “share” personal information for cross-context behavioural advertising.</li><li style="margin: 0 0 8px; font-size: 18px; line-height: 1.6; color: #463D33">We do not use personal information for profiling or automated decisions with legal or similarly significant effects.</li><li style="margin: 0 0 8px; font-size: 18px; line-height: 1.6; color: #463D33">We do not knowingly collect information from children under 16.</li></ul><h2 style="margin: 56px 0 14px; font-size: clamp(1.4rem, 1.9vw, 1.625rem); font-weight: 500; letter-spacing: -0.015em">Legal bases (UK and EEA visitors)</h2><p style="margin: 0 0 14px; font-size: 18px; line-height: 1.65; color: #463D33">Where UK or EU data protection law applies, we rely on our legitimate interests to run and secure the website and to reply to messages you send us, and on steps you request before entering into a contract when you ask about working with us.</p><h2 style="margin: 56px 0 14px; font-size: clamp(1.4rem, 1.9vw, 1.625rem); font-weight: 500; letter-spacing: -0.015em">Who we share it with</h2><p style="margin: 0 0 14px; font-size: 18px; line-height: 1.65; color: #463D33">Only with service providers that help us run the website and our email: GitHub, Inc. (website hosting via GitHub Pages) and Google LLC (email, via Google Workspace). They process the data on our behalf, under contracts that limit their use of it. We may also disclose information if the law requires it.</p><h2 style="margin: 56px 0 14px; font-size: clamp(1.4rem, 1.9vw, 1.625rem); font-weight: 500; letter-spacing: -0.015em">International transfers</h2><p style="margin: 0 0 14px; font-size: 18px; line-height: 1.65; color: #463D33">We are based in the United States. If you contact us from the UK or Europe, your information will be processed in the US. Where required, we rely on appropriate safeguards such as the UK International Data Transfer Addendum or the EU Standard Contractual Clauses offered by our providers.</p><h2 style="margin: 56px 0 14px; font-size: clamp(1.4rem, 1.9vw, 1.625rem); font-weight: 500; letter-spacing: -0.015em">How long we keep it</h2><p style="margin: 0 0 14px; font-size: 18px; line-height: 1.65; color: #463D33">We keep email correspondence for as long as needed for the conversation or working relationship, and delete it when it is no longer needed, unless we must keep it for legal or accounting reasons.</p><h2 style="margin: 56px 0 14px; font-size: clamp(1.4rem, 1.9vw, 1.625rem); font-weight: 500; letter-spacing: -0.015em">Your rights</h2><p style="margin: 0 0 14px; font-size: 18px; line-height: 1.65; color: #463D33">Depending on where you live, you may have the right to:</p><ul style="margin: 0 0 14px; padding-left: 22px"><li style="margin: 0 0 8px; font-size: 18px; line-height: 1.6; color: #463D33">know or access the personal information we hold about you</li><li style="margin: 0 0 8px; font-size: 18px; line-height: 1.6; color: #463D33">correct it</li><li style="margin: 0 0 8px; font-size: 18px; line-height: 1.6; color: #463D33">delete it</li><li style="margin: 0 0 8px; font-size: 18px; line-height: 1.6; color: #463D33">receive a copy in a portable format</li><li style="margin: 0 0 8px; font-size: 18px; line-height: 1.6; color: #463D33">object to or restrict certain processing</li><li style="margin: 0 0 8px; font-size: 18px; line-height: 1.6; color: #463D33">opt out of sale, sharing or targeted advertising (we do none of these)</li><li style="margin: 0 0 8px; font-size: 18px; line-height: 1.6; color: #463D33">not be discriminated against for using any of these rights</li></ul><p style="margin: 0 0 14px; font-size: 18px; line-height: 1.65; color: #463D33">These rights apply under US state privacy laws (such as those of California, Colorado, Connecticut, Virginia, Texas and others), the UK GDPR, and the EU GDPR. To use them, email <a href="mailto:hello@connectingintelligence.com" style="color: #9E432C; border-bottom: 1px solid rgba(158,67,44,0.4)">hello@connectingintelligence.com</a>. We will reply within the time the law requires (usually 30 to 45 days) and may need to confirm your identity first. You may use an authorised agent where the law allows. If we decline your request, you can appeal by replying to our decision.</p><p style="margin: 0 0 14px; font-size: 18px; line-height: 1.65; color: #463D33">If you are in the UK, you can also complain to the Information Commissioner’s Office (ico.org.uk). If you are in the EU, you can complain to your local data protection authority.</p><h2 style="margin: 56px 0 14px; font-size: clamp(1.4rem, 1.9vw, 1.625rem); font-weight: 500; letter-spacing: -0.015em">Notice for California residents</h2><p style="margin: 0 0 14px; font-size: 18px; line-height: 1.65; color: #463D33">In the past 12 months we have collected the following categories of personal information, only from you and from your browser:</p><ul style="margin: 0 0 14px; padding-left: 22px"><li style="margin: 0 0 8px; font-size: 18px; line-height: 1.6; color: #463D33"><strong>Identifiers:</strong> your name, email address and IP address.</li><li style="margin: 0 0 8px; font-size: 18px; line-height: 1.6; color: #463D33"><strong>Internet activity:</strong> basic server logs (browser type, pages requested).</li><li style="margin: 0 0 8px; font-size: 18px; line-height: 1.6; color: #463D33"><strong>Anything you choose to tell us</strong> in an email.</li></ul><p style="margin: 0 0 14px; font-size: 18px; line-height: 1.65; color: #463D33">We use this information only for the purposes described above: to reply to you and to run and secure the website. We keep it only as long as described under “How long we keep it”. We have not sold or shared personal information in the past 12 months, we do not collect sensitive personal information to infer characteristics about you, and we do not knowingly sell or share the personal information of anyone under 16.</p><h2 style="margin: 56px 0 14px; font-size: clamp(1.4rem, 1.9vw, 1.625rem); font-weight: 500; letter-spacing: -0.015em">Global Privacy Control and Do Not Track</h2><p style="margin: 0 0 14px; font-size: 18px; line-height: 1.65; color: #463D33">Because we do not sell or share personal information or use tracking, there is nothing for these signals to switch off. We honour them all the same.</p><h2 style="margin: 56px 0 14px; font-size: clamp(1.4rem, 1.9vw, 1.625rem); font-weight: 500; letter-spacing: -0.015em">Security</h2><p style="margin: 0 0 14px; font-size: 18px; line-height: 1.65; color: #463D33">We use reputable providers and reasonable measures to protect information. No method of transmission over the internet is completely secure.</p><h2 style="margin: 56px 0 14px; font-size: clamp(1.4rem, 1.9vw, 1.625rem); font-weight: 500; letter-spacing: -0.015em">Changes</h2><p style="margin: 0 0 14px; font-size: 18px; line-height: 1.65; color: #463D33">If we change this policy, we will update it here and change the date below.</p><p style="margin: 56px 0 0; font-size: 15px; color: #6A5E50">Last updated: 17 October 2026</p></div></section>
+  <div style="position: relative"><footer style="position: relative; z-index: 2; max-width: 1240px; margin: 0 auto; padding: 44px clamp(40px, 11vw, 170px) 40px; color: #6A5E50">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 24px; padding-top: 28px; border-top: 1px solid rgba(43,38,33,0.14); font-size: 14px">
+      <span>Connecting Intelligence LLC · 2026</span>
+      <a href="privacy.html" style="color: #6A5E50">Privacy</a>
+    </div>
+  </footer></div>
+  <svg aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 20; mix-blend-mode: multiply">
+  <filter id="pp-grain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" seed="4"/><feColorMatrix type="matrix" values="0 0 0 0 0.45  0 0 0 0 0.36  0 0 0 0 0.25  0 0 0 0.22 0"/></filter>
+  <filter id="pp-cloud"><feTurbulence type="fractalNoise" baseFrequency="0.004 0.009" numOctaves="3" seed="9"/><feColorMatrix type="matrix" values="0 0 0 0 0.45  0 0 0 0 0.36  0 0 0 0 0.25  0 0 0 0.16 0"/></filter>
+  <rect width="100%" height="100%" filter="url(#pp-cloud)"/>
+  <rect width="100%" height="100%" filter="url(#pp-grain)"/>
+  
+</svg>
+</div>
+<script>
+(function(){
+  var b=document.getElementById('contact-btn'), p=document.getElementById('contact-pop');
+  if(b&&p){ b.addEventListener('click',function(e){ e.stopPropagation(); var o=p.hidden; p.hidden=!o; b.setAttribute('aria-expanded',String(o)); });
+    document.addEventListener('click',function(e){ if(!p.hidden && !p.contains(e.target)){ p.hidden=true; b.setAttribute('aria-expanded','false'); } });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape'){ p.hidden=true; b.setAttribute('aria-expanded','false'); } }); }
+  function clocks(){ document.querySelectorAll('[data-tz]').forEach(function(li){ var t='--:--'; try{ t=new Intl.DateTimeFormat('en-GB',{hour:'2-digit',minute:'2-digit',timeZone:li.dataset.tz}).format(new Date()); }catch(e){}
+    li.querySelector('.clk-t').textContent=t; var h=parseInt(t,10), day=h>=6&&h<19, d=li.querySelector('.clk-dot');
+    d.style.background=day?'#D9A04A':'transparent'; d.style.borderColor=day?'#D9A04A':'#8A7D6B'; }); }
+  clocks(); setInterval(clocks,30000);
+})();
+</script>
+</body>
+</html>
