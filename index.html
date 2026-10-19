@@ -8,6 +8,7 @@
 <link rel="icon" href="/favicon.ico?v=2" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=2">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=2">
+<link rel="preload" href="/assets/fonts/BricolageGrotesque-400-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 #contact-pop:not([hidden]){display:contents}
 @media (max-width: 600px){
@@ -18,8 +19,16 @@
   [style*="min-height: 820px"]{min-height:0 !important}
   [style*="min-height: 820px"] > section{padding-top:72px !important;padding-bottom:88px !important}
 }
-.paper-grain{position:absolute;inset:0;pointer-events:none;z-index:20;mix-blend-mode:multiply;background-image:url(/assets/grain.webp),url(/assets/cloud.webp);background-size:300px 300px,1000px 1000px;background-repeat:repeat}
+/* paper texture lives in the paper backgrounds themselves: no overlay, no blending, text stays crisp */
+body,[style*="background: #F2EBDF"],[style*="background: #E2D5BF"]{background-image:url(/assets/grain.webp),url(/assets/cloud.webp) !important;background-size:300px 300px,1000px 1000px !important;background-repeat:repeat !important}
 @media (max-width: 800px), (hover: none){.st-breathe,.v-breathe,.v-drift-l,.v-drift-r,.my-twinkle{animation:none !important}.leaf-sway{animation:leaf-in .68s ease both !important}}
+/* performance: keep frequent small updates from repainting the whole page */
+.tw-mono{contain:layout paint}
+@view-transition{navigation:auto}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.22s}
+@media (max-width: 800px){
+  svg[viewBox="0 0 440 540"]{width:min(70vw,300px) !important;margin:12px auto 36px !important}
+}
 </style>
 <link rel="stylesheet" href="assets/fonts.css">
 <style>
@@ -236,7 +245,7 @@ h1 {font-weight: 500 !important; letter-spacing: -0.025em !important; line-heigh
     </div>
   </footer>
   </div>
-  <div aria-hidden="true" class="paper-grain"></div>
+  
 </div>
 <script>
 (function(){
