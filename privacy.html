@@ -21,7 +21,7 @@
 }
 /* paper texture lives in the paper backgrounds themselves: no overlay, no blending, text stays crisp */
 body,[style*="background: #F2EBDF"],[style*="background: #E2D5BF"]{background-image:url(/assets/grain.webp),url(/assets/cloud.webp) !important;background-size:300px 300px,1000px 1000px !important;background-repeat:repeat !important}
-@media (max-width: 800px), (hover: none){.st-breathe,.v-breathe,.v-drift-l,.v-drift-r,.my-twinkle{animation:none !important}.leaf-sway{animation:leaf-in .68s ease both !important}}
+@media (max-width: 800px), (hover: none){.st-breathe,.v-breathe,.v-drift-l,.v-drift-r,.my-twinkle{animation:none !important}.leaf-sway{animation-name:leaf-in !important;animation-duration:.68s !important;animation-iteration-count:1 !important;animation-fill-mode:both !important}}
 /* performance: keep frequent small updates from repainting the whole page */
 .tw-mono{contain:layout paint}
 @view-transition{navigation:auto}
