@@ -29,6 +29,8 @@ body,[style*="background: #F2EBDF"],[style*="background: #E2D5BF"]{background-im
 @media (max-width: 800px){
   svg[viewBox="0 0 440 540"]{width:min(70vw,300px) !important;margin:12px auto 36px !important}
   figure:has(> svg[aria-label^="Two overlapping"]){margin-top:-28px !important}
+  figure:has(> img[src*="w-solidago"]){width:min(78vw,360px) !important;margin:8px auto 20px !important}
+  [data-plate]{margin:36px auto 0 !important}
 }
 </style>
 <link rel="stylesheet" href="assets/fonts.css">
@@ -84,6 +86,8 @@ a{color:#2B2621;text-decoration:none}a:hover{color:#9E432C}
 @media (prefers-reduced-motion: reduce){.w-in{animation:none}}
 em, [style*="font-style: italic"] {font-family: 'EB Garamond', Georgia, serif !important}
 h1 {font-weight: 500 !important; letter-spacing: -0.025em !important; line-height: 0.98 !important}
+.hero-roots{--g:-4px;--iw:max(1250px, 88vw)}
+@media (max-width: 800px){.hero-roots{--g:520px;--iw:260vw}}
 </style>
 </head>
 <body>
@@ -108,13 +112,13 @@ h1 {font-weight: 500 !important; letter-spacing: -0.025em !important; line-heigh
     <feDisplacementMap in="SourceGraphic" in2="n" scale="22" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
   </filter>
 </svg>
-  <div style="position: relative; min-height: 820px; display: flex; flex-direction: column; width: 100%">
+  <div class="hero-roots" style="position: relative; min-height: 820px; display: flex; flex-direction: column; width: 100%; overflow: hidden">
     
-    <div aria-hidden="true" style="position: absolute; left: 70%; top: 50%; width: min(50vw, 740px); aspect-ratio: 1 / 1; transform: translate(-50%, -50%)">
-      
-      <div style="position: absolute; left: 50%; top: 50%; width: 44%; transform: translate(-50%, -50%)"><img class="my-logo" src="assets/logo-brush.png" alt="" style="width: 100%; display: block; mix-blend-mode: multiply"></div>
+    <div aria-hidden="true" style="position: absolute; inset: 0; background: radial-gradient(circle at 92% -8%, rgba(236,205,140,0.42), rgba(236,205,140,0) 42%); pointer-events: none"></div>
+    <div aria-hidden="true" style="position: absolute; left: 70%; top: 50%; width: min(34vw, 470px); aspect-ratio: 1 / 1; transform: translate(-50%, -50%); pointer-events: none">
+      <div style="position: absolute; inset: 8%; border-radius: 50%; background: radial-gradient(closest-side, rgba(242,235,223,0.92), rgba(242,235,223,0.6) 60%, rgba(242,235,223,0))"></div>
+      <div style="position: absolute; left: 50%; top: 50%; width: 58%; transform: translate(-50%, -50%)"><img class="my-logo" src="assets/logo-brush.png" alt="" style="width: 100%; display: block; mix-blend-mode: multiply"></div>
     </div>
-    <div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(242,235,223,0.95) 0%, rgba(242,235,223,0.75) 40%, rgba(242,235,223,0) 62%)"></div>
     <header style="position: relative; z-index: 30; width: 100%; box-sizing: border-box; max-width: 1580px; margin: 0 auto; padding: 20px clamp(40px, 11vw, 170px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
     <a href="/" aria-label="Connecting Intelligence, home" style="display: inline-flex; align-items: center"><span style="display: inline-flex; align-items: center; gap: 10px"><img src="assets/logo-brush.png" alt="" style="width: 30px; height: 30px; mix-blend-mode: multiply"><span style="font-family: 'Bricolage Grotesque', 'Helvetica Neue', sans-serif; font-size: 19px">Connecting Intelligence</span></span></a>
     <nav style="position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 28px; font-family: 'Bricolage Grotesque', 'Helvetica Neue', sans-serif; font-size: 18px">
@@ -157,7 +161,7 @@ h1 {font-weight: 500 !important; letter-spacing: -0.025em !important; line-heigh
     
     <div style="position: relative; max-width: 1240px; margin: 0 auto; padding: 120px clamp(40px, 11vw, 170px) 120px">
       <div class="nw-map" style="position: absolute; right: clamp(40px, 11vw, 170px); top: 175px; width: min(306px, 28vw)">
-        <img src="assets/weaver-1919-besseya.jpg" alt="Fig. 39, Besseya plantaginea, showing the widely spreading root system: two plants whose roots merge into one network (J. E. Weaver, 1919)" style="width: 100%; display: block; box-shadow: 0 14px 30px rgba(70,50,30,0.14), 0 2px 4px rgba(70,50,30,0.08)">
+        <figure style="margin: 0"><img src="assets/weaver-1919-besseya.jpg" alt="Fig. 39, Besseya plantaginea, showing the widely spreading root system: two plants whose roots merge into one network (J. E. Weaver, 1919)" data-fig style="width: 100%; display: block; box-shadow: 0 14px 30px rgba(70,50,30,0.14), 0 2px 4px rgba(70,50,30,0.08)"></figure>
       </div>
       <p style="margin: 0 0 24px; font-style: italic; font-size: 24px; color: #A9662F">what we work from</p>
       <ol class="wwf-list" style="list-style: none; margin: 0; padding: 0; max-width: 760px; border-bottom: 1.5px dashed rgba(43,38,33,0.2)">
@@ -270,6 +274,8 @@ h1 {font-weight: 500 !important; letter-spacing: -0.025em !important; line-heigh
     btns.forEach(function(x){ x.setAttribute('aria-expanded','false'); x.querySelector('.acc-sign').textContent='+'; document.querySelector('[data-panel="'+x.dataset.acc+'"]').hidden=true; });
     if(!open){ b.setAttribute('aria-expanded','true'); b.querySelector('.acc-sign').textContent='\u2212'; document.querySelector('[data-panel="'+i+'"]').hidden=false; } }); });
 })();
+(function(){var F=[{"src": "assets/weaver-1919-besseya.jpg", "cap": "Fig. 39. Two plants whose roots merge into one network.", "alt": "Fig. 39, Besseya plantaginea, showing the widely spreading root system: two plants whose roots merge into one network (J. E. Weaver, 1919)"}, {"src": "assets/f-trust.jpg", "cap": "Fig. 17. One plant and its whole root system.", "alt": "Ink drawing of a single prairie plant with a long, deep root system on a measuring grid (J. E. Weaver, 1919)"}, {"src": "assets/f-safe.jpg", "cap": "Three plants side by side on the one-foot grid.", "alt": "Ink drawing of three plants of different sizes side by side, their roots measured on a grid (J. E. Weaver, 1919)"}, {"src": "assets/f-ethics.jpg", "cap": "Plate 1. Roots excavated and photographed whole.", "alt": "Photograph of whole root systems dug out of the soil and laid on a white background (J. E. Weaver, 1919)"}, {"src": "assets/f-resilience.jpg", "cap": "Neighbouring plants, roots excavated together.", "alt": "Photograph of excavated roots of neighbouring plants growing into the same soil (J. E. Weaver, 1919)"}],img=document.querySelector('[data-fig]'),cap=document.querySelector('[data-figcap]');
+document.querySelectorAll('[data-acc]').forEach(function(b){b.addEventListener('click',function(){setTimeout(function(){var o=document.querySelector('[data-acc][aria-expanded="true"]'),i=o?+o.dataset.acc+1:0;img.src=F[i].src;img.alt=F[i].alt;if(cap)cap.textContent=F[i].cap+' J. E. Weaver, 1919';},0);});});})();
 </script>
 </body>
 </html>

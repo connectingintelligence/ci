@@ -29,6 +29,8 @@ body,[style*="background: #F2EBDF"],[style*="background: #E2D5BF"]{background-im
 @media (max-width: 800px){
   svg[viewBox="0 0 440 540"]{width:min(70vw,300px) !important;margin:12px auto 36px !important}
   figure:has(> svg[aria-label^="Two overlapping"]){margin-top:-28px !important}
+  figure:has(> img[src*="w-solidago"]){width:min(78vw,360px) !important;margin:8px auto 20px !important}
+  [data-plate]{margin:36px auto 0 !important}
 }
 </style>
 <link rel="stylesheet" href="assets/fonts.css">
@@ -62,22 +64,22 @@ h1 {font-weight: 500 !important; letter-spacing: -0.025em !important; line-heigh
 <div style="position: relative; font-family: 'Bricolage Grotesque', 'Helvetica Neue', sans-serif; color: #2B2621; background: #F2EBDF; overflow: hidden; min-height: 100vh; display: flex; flex-direction: column">
   <svg aria-hidden="true" width="0" height="0" style="position: absolute">
   <filter id="pp-brush" x="-15%" y="-15%" width="130%" height="130%">
-    <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="7" result="n"/>
-    <feDisplacementMap in="SourceGraphic" in2="n" scale="16" xChannelSelector="R" yChannelSelector="G" result="d"/>
-    <feTurbulence type="fractalNoise" baseFrequency="0.7 0.06" numOctaves="2" seed="3" result="g"/>
-    <feColorMatrix in="g" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -2.4 0 0 0 2.05" result="gm"/>
-    <feComposite in="d" in2="gm" operator="in"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="7" result="n"></feTurbulence>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="16" xChannelSelector="R" yChannelSelector="G" result="d"></feDisplacementMap>
+    <feTurbulence type="fractalNoise" baseFrequency="0.7 0.06" numOctaves="2" seed="3" result="g"></feTurbulence>
+    <feColorMatrix in="g" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -2.4 0 0 0 2.05" result="gm"></feColorMatrix>
+    <feComposite in="d" in2="gm" operator="in"></feComposite>
   </filter>
   <filter id="pp-ink" x="-5%" y="-60%" width="110%" height="220%">
-    <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="5" result="n"/>
-    <feDisplacementMap in="SourceGraphic" in2="n" scale="9" xChannelSelector="R" yChannelSelector="G" result="d"/>
-    <feTurbulence type="fractalNoise" baseFrequency="0.5 0.04" numOctaves="2" seed="8" result="g"/>
-    <feColorMatrix in="g" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -1.3 0 0 0 1.6" result="gm"/>
-    <feComposite in="d" in2="gm" operator="in"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="5" result="n"></feTurbulence>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="9" xChannelSelector="R" yChannelSelector="G" result="d"></feDisplacementMap>
+    <feTurbulence type="fractalNoise" baseFrequency="0.5 0.04" numOctaves="2" seed="8" result="g"></feTurbulence>
+    <feColorMatrix in="g" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -1.3 0 0 0 1.6" result="gm"></feColorMatrix>
+    <feComposite in="d" in2="gm" operator="in"></feComposite>
   </filter>
   <filter id="pp-soft" x="-15%" y="-15%" width="130%" height="130%">
-    <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="11" result="n"/>
-    <feDisplacementMap in="SourceGraphic" in2="n" scale="22" xChannelSelector="R" yChannelSelector="G"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="11" result="n"></feTurbulence>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="22" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
   </filter>
 </svg>
   <div style="position: relative"><header style="position: relative; z-index: 30; width: 100%; box-sizing: border-box; max-width: 1580px; margin: 0 auto; padding: 20px clamp(40px, 11vw, 170px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
@@ -102,7 +104,7 @@ h1 {font-weight: 500 !important; letter-spacing: -0.025em !important; line-heigh
     </div>
     
   </section><section style="position: relative; z-index: 2; background: #E2D5BF; overflow: hidden">
-    <svg aria-hidden="true" viewBox="0 0 400 400" style="position: absolute; right: -160px; top: 60px; width: 560px; height: 560px; pointer-events: none; z-index: 0"><circle cx="200" cy="200" r="150" fill="#C4A97F" opacity="0.45" filter="url(#pp-soft)"/><circle cx="240" cy="170" r="90" fill="#C4A97F" opacity="0.315" filter="url(#pp-soft)"/></svg>
+    <svg aria-hidden="true" viewBox="0 0 400 400" style="position: absolute; right: -160px; top: 60px; width: 560px; height: 560px; pointer-events: none; z-index: 0"><circle cx="200" cy="200" r="150" fill="#C4A97F" opacity="0.45" filter="url(#pp-soft)"></circle><circle cx="240" cy="170" r="90" fill="#C4A97F" opacity="0.315" filter="url(#pp-soft)"></circle></svg>
     <div style="position: relative; z-index: 1; max-width: 1240px; margin: 0 auto; padding: 120px clamp(40px, 11vw, 170px)"><ul style="margin: 0; padding: 20px 0 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 56px 44px"><li style="flex: 1 1 280px; max-width: 360px; list-style: none">
         <figure style="position: relative; margin: 0; background: #F6F0E4; padding: 12px 12px 0; box-shadow: 0 14px 30px rgba(70,50,30,0.16), 0 2px 4px rgba(70,50,30,0.10); transform: rotate(-2deg); will-change: transform; backface-visibility: hidden">
           <span aria-hidden="true" style="position: absolute; top: -11px; left: 50%; width: 78px; height: 22px; margin-left: -39px; background: rgba(232,221,196,0.8); transform: rotate(3.0deg)"></span>
